@@ -1,3 +1,3 @@
 namespace api.contracts.requests;
 
-public record CreateTodoRequest();
+public record CreateTodoRequest(Guid CreatorID, string todoHeading, string todoBody) : IRequest;

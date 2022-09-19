@@ -21,17 +21,22 @@ public class userRequestHandler: ConnectionHandler, IDBRequestHandler
         throw new NotImplementedException();
     }
 
-    public bool create(CreateUserRequest request)
+    public bool create(IRequest request)
     {
         return false;
     }
 
-    public bool update(UpsertUserRequest request)
+    public bool update(IRequest request)
     {
         return false;
     }
 
     public bool delete(Guid UserID)
+    {
+        return false;
+    }
+
+    public bool login(UserLoginRequest request)
     {
         return false;
     }

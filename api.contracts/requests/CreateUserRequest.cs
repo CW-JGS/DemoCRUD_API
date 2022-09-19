@@ -1,3 +1,3 @@
 namespace api.contracts.requests;
 
-public record CreateUserRequest();
+public record CreateUserRequest(): IRequest;

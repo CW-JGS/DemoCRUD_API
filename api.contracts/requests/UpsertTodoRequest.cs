@@ -1,3 +1,3 @@
 namespace api.contracts.requests;
 
-public record UpsertTodoRequest();
+public record UpsertTodoRequest(): IRequest;
