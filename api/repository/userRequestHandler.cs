@@ -1,3 +1,4 @@
+using api.contracts.requests;
 using api.models;
 namespace api.repository;
 
@@ -10,27 +11,27 @@ public class userRequestHandler: ConnectionHandler, IDBRequestHandler
         _connectionString = GetConnectionString();
     }
 
-    public IEnumerable<User> getAllUsers()
+    public IEnumerable<IModel> getAll()
     {
         throw new NotImplementedException();
     }
 
-    public User getUserByUUID(Guid userID)
+    public IModel getById(Guid userID)
     {
         throw new NotImplementedException();
     }
 
-    public bool createUser( /* add in upsert contract*/)
+    public bool create(CreateUserRequest request)
     {
         return false;
     }
 
-    public bool updateUser( /* use upsert contract */)
+    public bool update(UpsertUserRequest request)
     {
         return false;
     }
 
-    public bool deleteUser(Guid UserID)
+    public bool delete(Guid UserID)
     {
         return false;
     }

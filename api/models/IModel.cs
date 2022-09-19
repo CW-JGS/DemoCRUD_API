@@ -1,6 +1,6 @@
 namespace api.models;
 
-public class todo: IModel
+public interface IModel
 {
     
 }

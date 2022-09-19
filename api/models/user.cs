@@ -2,7 +2,7 @@ using api.Middleware;
 // this is a basic model
 namespace api.models;
 // we use the public access modifier to make sure only the api is about to access it
-public partial class User
+public partial class User:  IModel
 {
     public Guid UserID { get; init; }
     public string FirstName { get; set; }
