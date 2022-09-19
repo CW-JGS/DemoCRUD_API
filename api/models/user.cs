@@ -1,7 +1,8 @@
+using api.Middleware;
 // this is a basic model
 namespace api.models;
 // we use the public access modifier to make sure only the api is about to access it
-public class User
+public partial class User
 {
     public Guid UserID { get; init; }
     public string FirstName { get; set; }
@@ -17,8 +18,8 @@ public class User
         UserID = new Guid();
         CreatedAt = DateTime.Now;
         LastUpdated = DateTime.Now;
-        Salt =
-            FirstName = _paramFirstName;
+        Salt = new SaltGen().Salt;
+        FirstName = _paramFirstName;
         SurName = _paramSurName;
         Email = _paramEmail;
         Password = _paramPassword;

@@ -12,12 +12,18 @@ public class SaltGen: RandomString
         Salt = GenerateSalt();
     }
 
+    public string NextSalt()
+    {
+        Salt = GenerateSalt();
+        return Salt;
+    }
     private string GenerateSalt()
     {
         var saltBuilder = new StringBuilder();
-        int choice = _random.Next(1, 4);
+        int choice = 0;
         for (int i = 0; i <= 4; i++)
         {
+            choice = _random.Next(1, 4);
             switch (choice)
             {
                 case 1:
@@ -29,13 +35,9 @@ public class SaltGen: RandomString
                 case 3: 
                     saltBuilder.Append(rndStr(_size: 4, 'U'));
                     break;
-                    =
             }    
         }
-
-        
-
-        return "xxxxyyyyzzzzaaaa";
+        return saltBuilder.ToString();
     }
 }
 
@@ -97,8 +99,6 @@ public abstract class RandomString
                     Console.WriteLine(err);
                     throw;
                 }
-            default:
-                break;
         }
 
         throw new SaltGenException("generation failed");
